@@ -26,6 +26,7 @@ public class SecurityConfig {
                     authConfig.requestMatchers(HttpMethod.GET, "/", "/login", "/register", "/error", "/login-error", "/logout", "/css/**").permitAll();
                     authConfig.requestMatchers(HttpMethod.POST, "/createUser").permitAll();
                     authConfig.requestMatchers(HttpMethod.GET, "/user").hasAuthority("ADMIN");
+                    authConfig.requestMatchers(HttpMethod.GET, "/roles").hasAuthority("ADMIN");
                     authConfig.requestMatchers(HttpMethod.GET, "/admin").hasAuthority("ADMIN");
                     authConfig.requestMatchers(HttpMethod.GET, "/developer").hasAuthority("DEVELOPER");
                     authConfig.requestMatchers(HttpMethod.GET, "/users").hasAnyAuthority("ADMIN", "DEVELOPER");
